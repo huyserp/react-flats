@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import flats from '../../data/flats.js';
-import FlatList from './flat-list'
+import FlatList from './flat-list';
+import Map from './map';
 
 class App extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class App extends Component {
     return (
       <div>
         <FlatList allFlats={this.state.flats}/>
-        <div className="map-container"></div>
+        <Map />
       </div>
     );
   }
