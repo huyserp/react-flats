@@ -9,19 +9,20 @@ class App extends Component {
 
     this.state = {
       flats: flats,
-      selectedFlat: ""
+      selectedFlat: []
     };
   }
 
-  selectFlat() {
-
+  selectFlat = (id) => {
+    const coordinates = [this.state.flats[id-1].lat, this.state.flats[id-1].lng]
+    this.setState( {selectedFlat: coordinates } );
   }
 
   render() {
     return (
       <div>
-        <FlatList allFlats={this.state.flats}/>
-        <Map />
+        <FlatList allFlats={this.state.flats} selectFlatFunction={this.selectFlat}/>
+        <Map coordinates={this.state.selectedFlat}/>
       </div>
     );
   }
