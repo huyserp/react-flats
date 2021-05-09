@@ -5,10 +5,10 @@ import Marker from './marker';
 class Map extends Component {
   static defaultProps = {
     center: {
-      lat: 48.884211,
+      lat: 48.86,
       lng: 2.34689
     },
-    zoom: 13
+    zoom: 13.5
   };
 
   render(){
